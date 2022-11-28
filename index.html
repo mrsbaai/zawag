@@ -1,267 +1,383 @@
 <!doctype html>
-                        <html>
-                            <head>
-                                <meta charset='utf-8'>
-                                <meta name='viewport' content='width=device-width, initial-scale=1'>
-                                <title>Snippet - BBBootstrap</title>
-                                <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
-                                <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
-                                <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-                                <style>::-webkit-scrollbar {
-                                  width: 8px;
-                                }
-                                /* Track */
-                                ::-webkit-scrollbar-track {
-                                  background: #f1f1f1; 
-                                }
-                                 
-                                /* Handle */
-                                ::-webkit-scrollbar-thumb {
-                                  background: #888; 
-                                }
-                                
-                                /* Handle on hover */
-                                ::-webkit-scrollbar-thumb:hover {
-                                  background: #555; 
-                                } /* Importing fonts from Google */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+<html>
 
-/* Reseting */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Snippet - BBBootstrap</title>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://use.fontawesome.com/releases/v5.7.2/css/all.css' rel='stylesheet'>
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <style>
+         ::-webkit-scrollbar {
+            width: 8px;
+        }
+        /* Track */
+        
+         ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        /* Handle */
+        
+         ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+        /* Handle on hover */
+        
+         ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Importing fonts from Google */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+        /* Reseting */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: url("body_bg.jpg") top center repeat-x;
+            min-height: 100vh;
+            padding-top: 150px;
+        }
+        
+        .card {
+            background: #EEEEDD;
+        }
+        
+        .owl-carousel .owl-item {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .owl-carousel .owl-item .card {
+            padding: 30px;
+            position: relative;
+        }
+        
+        .owl-carousel .owl-stage-outer {
+            overflow-y: auto !important;
+            padding-bottom: 40px;
+        }
+        
+        .owl-carousel .owl-item img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+        
+        .owl-carousel .owl-item .card .name {
+            position: absolute;
+            bottom: -20px;
+            left: 33%;
+            color: #9E3B3B;
+            font-size: 1.1rem;
+            font-weight: 600;
+            background-color: #DDDD99;
+            padding: 0.3rem 0.4rem;
+            border-radius: 5px;
+            box-shadow: 2px 3px 15px #3c405a;
+        }
+        
+        .owl-carousel .owl-item .card {
+            opacity: 0.2;
+            transform: scale3d(0.8, 0.8, 0.8);
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .owl-carousel .owl-item.active.center .card {
+            opacity: 1;
+            transform: scale3d(1, 1, 1);
+        }
+        
+        .owl-carousel .owl-dots {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .owl-theme .owl-dots .owl-dot span {
+            height: 20px;
+            background: #DDDD99 !important;
+            border-radius: 2px !important;
+            opacity: 0.8;
+        }
+        
+        .owl-theme .owl-dots .owl-dot.active span,
+        .owl-theme .owl-dots .owl-dot:hover span {
+            height: 13px;
+            width: 13px;
+            opacity: 1;
+            transform: translateY(2px);
+            background: #9E3B3B !important;
+        }
+        
+        @media(min-width: 480.6px) and (max-width: 575.5px) {
+            .owl-carousel .owl-item .card .name {
+                left: 24%;
+            }
+        }
+        
+        @media(max-width: 360px) {
+            .owl-carousel .owl-item .card .name {
+                left: 30%;
+            }
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        li {
+            position: relative;
+            padding-left: 1.5em;
+            /* space to preserve indentation on wrap */
+        }
+        
+        li:before {
+            content: '';
+            /* placeholder for the SVG */
+            position: absolute;
+            left: 0;
+            /* place the SVG at the start of the padding */
+            width: 2em;
+            height: 2em;
+            background: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='utf-8'?><svg width='18' height='18' viewBox='0 0 1792 1792' xmlns='http://www.w3.org/2000/svg'><path d='M1671 566q0 40-28 68l-724 724-136 136q-28 28-68 28t-68-28l-136-136-362-362q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 295 656-657q28-28 68-28t68 28l136 136q28 28 28 68z'/></svg>") no-repeat;
+        }
+        
+        .rtl {
+            direction: rtl;
+        }
+    </style>
+</head>
 
 
-body {
-    background: linear-gradient(to right, #101c81, #2a6ba3);
-    min-height: 100vh;
-}
 
-.owl-carousel .owl-item {
-    transition: all 0.3s ease-in-out;
-}
-
-.owl-carousel .owl-item .card {
-    padding: 30px;
-    position: relative;
-}
-
-.owl-carousel .owl-stage-outer {
-    overflow-y: auto !important;
-    padding-bottom: 40px;
-}
-
-.owl-carousel .owl-item img {
-    height: 200px;
-    object-fit: cover;
-    border-radius: 6px;
-}
-
-.owl-carousel .owl-item .card .name {
-    position: absolute;
-    bottom: -20px;
-    left: 33%;
-    color: #101c81;
-    font-size: 1.1rem;
-    font-weight: 600;
-    background-color: aquamarine;
-    padding: 0.3rem 0.4rem;
-    border-radius: 5px;
-    box-shadow: 2px 3px 15px #3c405a;
-}
-
-.owl-carousel .owl-item .card {
-    opacity: 0.2;
-    transform: scale3d(0.8, 0.8, 0.8);
-    transition: all 0.3s ease-in-out;
-}
-
-.owl-carousel .owl-item.active.center .card {
-    opacity: 1;
-    transform: scale3d(1, 1, 1);
-}
-
-.owl-carousel .owl-dots {
-    display: inline-block;
-    width: 100%;
-    text-align: center;
-}
-
-.owl-theme .owl-dots .owl-dot span {
-    height: 20px;
-    background: #2a6ba3 !important;
-    border-radius: 2px !important;
-    opacity: 0.8;
-}
-
-.owl-theme .owl-dots .owl-dot.active span,
-.owl-theme .owl-dots .owl-dot:hover span {
-    height: 13px;
-    width: 13px;
-    opacity: 1;
-    transform: translateY(2px);
-    background: #83b8e7 !important;
-}
-
-@media(min-width: 480.6px) and (max-width: 575.5px) {
-    .owl-carousel .owl-item .card .name {
-        left: 24%;
-    }
-}
-
-@media(max-width: 360px) {
-    .owl-carousel .owl-item .card .name {
-        left: 30%;
-    }
-}
-.bg-q{
-background-image: url("https://www.qiran.com/images/body_bg.jpg");
-background-repeat: repeat-x;/* Determine what direction the image will repeat */
-
-height:150px;
-
-}
-
-</style>
-                                </head>
-								
-								<div class="container-fluid fixed-top bg-q ">
-    <div class="navbar  navbar-expand-lg navbar-dark bg-transparent container text-center  pb-5">
-	
-	</div>
-</div>
-
-                                <body className='snippet-body'>
-                                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+<body className='snippet-body '>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.2.1/owl.carousel.js"></script>
-    <div class="owl-carousel owl-theme mt-5">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class=" font-weight-bold">موقع زواج وتعارف اسلامي يوفر للمسلمين أكبر تشكيلة من الشركاء المحتملين للزواج</h2>
+                <h2>The largest selection of potential marriage partners for <b>Muslim singles</b></h2>
+
+
+            </div>
+        </div>
+
+        <div class="row pt-5 pb-5">
+
+            <div class="col-lg-4 text-center pb-5"><img class="img-fluid card-img-top" src="welcome.jpg" /></div>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+
+                        <h5 class="font-weight-bold"><mark>Now over 5 million members - اكثر من 5 مليون عضو</mark>
+                        </h5><br/>
+                        <h5 class="font-weight-bold"><mark>High quality profiles and pictures - ملفات وصور عالية الجوده
+                        </mark></h5><br/>
+                        <h5 class="font-weight-bold"><mark>Ethical standards to ensure safety- معايير اخلاقيه مفروضة لضمان مناخ آمن
+                        </mark></h5><br/>
+                        <h5 class="font-weight-bold"><mark>24/7 technical support for all members - دعم فني على مدار الساعه
+                        </mark></h5><br/>
+                        <h5 class="font-weight-bold"><mark>100% anonymity for ultimate security - معلومات الاتصال الشخصيه الخاصة بك آمنة دائمًا
+                        </mark></h5><br/>
+                        <h5 class="font-weight-bold"><mark>Success stories from around the world - قصص نجاح من مختلف انحاء العالم
+                        </mark></h5><br/>
+
+
+
+
+
+                    </div>
+
+
+                </div>
+                <div class="row p-5">
+                    <div class="col-md-12 text-center">
+                        <button type="button" class="btn btn-danger btn-lg">Free Sign-up</button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="row text-center">
+
+            <div class="col-md-12">
+                <h2>Today's Trending Users</h2>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+    <div class="owl-carousel owl-theme mt-5 pb-5">
         <div class="owl-item">
             <div class="card">
                 <div class="img-card">
-                    <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt="">
+                    <img src="1.jpg" alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
                 </div>
                 <div class="name">
-                    Denis Richie
+                    Wafaaa el-Javid
                 </div>
             </div>
         </div>
         <div class="owl-item">
             <div class="card">
                 <div class="img-card">
-                    <img src="https://images.pexels.com/photos/1024311/pexels-photo-1024311.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260"
-                        alt="">
+                    <img src="2.jpg" alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
                 </div>
                 <div class="name">
-                    Lisa Sthalekar
+                    Waajida al-Kazmi
                 </div>
             </div>
         </div>
         <div class="owl-item">
             <div class="card">
                 <div class="img-card">
-                    <img src="https://images.pexels.com/photos/1036622/pexels-photo-1036622.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt="">
+                    <img src="3.jpg" alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
                 </div>
                 <div class="name">
-                    Elizabith Richie
+                    Naaila al-Emami
                 </div>
             </div>
         </div>
         <div class="owl-item">
             <div class="card">
                 <div class="img-card">
-                    <img src="https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt="">
+                    <img src="4.jpg" alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
                 </div>
                 <div class="name">
-                    Daniel Xavier
+                    Nada al-Hafeez
                 </div>
             </div>
         </div>
         <div class="owl-item">
             <div class="card">
                 <div class="img-card">
-                    <img src="https://images.pexels.com/photos/1832959/pexels-photo-1832959.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-                        alt="">
+                    <img src="5.jpg" alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
                 </div>
                 <div class="name">
-                    Emma Watson
+                    Nuzha al-Salam
                 </div>
             </div>
         </div>
         <div class="owl-item">
             <div class="card">
                 <div class="img-card">
-                    <img src="https://images.pexels.com/photos/718261/pexels-photo-718261.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                        alt="">
+                    <img src="6.jpg" alt="">
                 </div>
                 <div class="testimonial mt-4 mb-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus expedita dicta doloremque odit
-                    saepe quo natus aut accusantium alias blanditiis.
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
                 </div>
                 <div class="name">
-                    Mohammad Imran
+                    Farhat al-Elbaz
+                </div>
+            </div>
+        </div>
+        <div class="owl-item">
+            <div class="card">
+                <div class="img-card">
+                    <img src="7.jpg" alt="">
+                </div>
+                <div class="testimonial mt-4 mb-2">
+                    Register for free to see the full profile.
+                    <br/>سجل مجانا لمشاهدة الملف الشخصي الكامل.
+                </div>
+                <div class="name">
+                    Haseena al-Srour
                 </div>
             </div>
         </div>
     </div>
-                                <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
-                                <script type='text/javascript' src='#'></script>
-                                <script type='text/javascript' src='#'></script>
-                                <script type='text/javascript' src='#'></script>
-                                <script type='text/javascript'>$(document).ready(function () {
-    var silder = $(".owl-carousel");
-    silder.owlCarousel({
-        autoplay: true,
-        autoplayTimeout: 3000,
-        autoplayHoverPause: false,
-        items: 1,
-        stagePadding: 20,
-        center: true,
-        nav: false,
-        margin: 50,
-        dots: true,
-        loop: true,
-        responsive: {
-            0: { items: 1 },
-            480: { items: 2 },
-            575: { items: 2 },
-            768: { items: 2 },
-            991: { items: 3 },
-            1200: { items: 4 }
-        }
-    });
-});</script>
-                                <script type='text/javascript'>var myLink = document.querySelector('a[href="#"]');
-                                myLink.addEventListener('click', function(e) {
-                                  e.preventDefault();
-                                });</script>
-                            
-                                </body>
-                            </html>
+
+    <div class="row pt-5 pb-5">
+
+
+        <div class="col-md-12 text-center"><button type="button" class="btn btn-danger btn-lg">Free Sign-up</button></div>
+    </div>
+
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js'></script>
+    <script type='text/javascript' src='#'></script>
+    <script type='text/javascript' src='#'></script>
+    <script type='text/javascript' src='#'></script>
+    <script type='text/javascript'>
+        $(document).ready(function() {
+            var silder = $(".owl-carousel");
+            silder.owlCarousel({
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: false,
+                items: 1,
+                stagePadding: 20,
+                center: true,
+                nav: false,
+                margin: 50,
+                dots: true,
+                loop: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    480: {
+                        items: 2
+                    },
+                    575: {
+                        items: 2
+                    },
+                    768: {
+                        items: 2
+                    },
+                    991: {
+                        items: 3
+                    },
+                    1200: {
+                        items: 4
+                    }
+                }
+            });
+        });
+    </script>
+    <script type='text/javascript'>
+        var myLink = document.querySelector('a[href="#"]');
+        myLink.addEventListener('click', function(e) {
+            e.preventDefault();
+        });
+    </script>
+
+</body>
+
+</html>
